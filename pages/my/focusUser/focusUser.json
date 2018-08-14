@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我关注的",
+  "navigationBarBackgroundColor": "#2f2f2f",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "pop": "/plugin/component/pop/pop"
+  }
+}

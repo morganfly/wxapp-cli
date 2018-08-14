@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "咸话详情",
+  "usingComponents": {
+    "header": "/plugin/component/header/header",
+    "reply": "/plugin/component/reply/reply",
+    "postsEdit": "/plugin/component/postsEdit/postsEdit",
+    "pop": "/plugin/component/pop/pop",
+    "top": "/plugin/component/top/top"
+  }
+}

@@ -1,0 +1,43 @@
+.pro_img{
+  width: 750rpx;
+  height: 404rpx;
+}
+
+.frame{
+  padding: 25rpx 27rpx;
+  border-bottom: 1px solid #e2e2e2;
+  background: #ebebeb;
+  color: #848484;
+  font-size: 28rpx;
+}
+.frame .title{
+  font-size: 32rpx;
+  color: #2f2f2f;
+  margin-bottom: 7rpx;
+}
+
+.frame .rule{
+  margin-bottom: 50rpx;
+  font-size: 26rpx;
+}
+
+.btnFrame{
+  width: 750rpx;
+  height: 90rpx;
+  text-align: center;
+  background: #f7f7f7;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.btnFrame .btn{
+  background: #e7d2a8;
+  text-align: center;
+  width: 290rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  font-size: 34rpx;
+  margin: 15rpx auto;
+  border: none;
+}

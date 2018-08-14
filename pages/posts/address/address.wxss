@@ -1,0 +1,10 @@
+.item{
+  padding: 30rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #e2e2e2;
+  
+}
+
+.no_address{
+
+}

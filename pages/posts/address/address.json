@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "地址",
+  "navigationBarBackgroundColor": "#2f2f2f",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "top": "/plugin/component/top/top"
+  }
+}

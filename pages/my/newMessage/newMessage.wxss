@@ -1,0 +1,68 @@
+page {
+  background: #f7f7f7 !important;
+  font-size: 28rpx;
+}
+
+.message {
+  border-bottom: 1px solid #e2e2e2;
+  padding: 12rpx 0;
+  position: relative;
+}
+
+.replyFrame {
+  align-items: center;
+}
+
+.replyFrame .flex {
+  align-items: center;
+}
+
+.replyFrame, .beReplyed {
+  padding: 12rpx 27rpx;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.beReplyed {
+  font-size: 32rpx;
+}
+
+.name {
+  color: #3676a7;
+}
+
+.colon {
+  margin: 0 10rpx;
+}
+
+.typeText {
+  color: #848484;
+}
+
+.reply_icon {
+  width: 26rpx;
+  height: 23rpx;
+  margin-right: 12rpx;
+}
+
+.feedback {
+  align-items: center;
+  color: #3676a7;
+}
+
+.content, .content2 {
+  width: 380rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.redPointer {
+  width: 15rpx;
+  height: 15rpx;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 35rpx;
+  right: 20rpx;
+}

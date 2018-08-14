@@ -1,0 +1,75 @@
+<view class='posts {{isMy?"isMy1":""}}'>
+  <!-- 活动标记 -->
+  <view wx:if='{{d.category_id === 3}}' class='activityHeader flex'>
+    <image class='icon_activity' src='/img/icon_activity.png'></image>
+    <view>活动</view>
+  </view>
+
+  <!--帖子头部  -->
+  <view wx:if='{{d.user}}' hidden='{{noUser}}' class='postsHeader flex'>
+    <view class='part_left flex' data-user='{{d.user.id}}' bindtap='toMy'>
+      <image class='avatar' src='{{d.user.avatar}}'></image>
+      <view>
+        <view class='nick_name flex'>
+          {{d.user.nick_name}}
+          <span class='level'>{{d.user.level}}</span>
+          <view class='role' wx:if='{{d.user.role}}'>{{d.user.role[0].desc}}</view>
+        </view>
+        <view>
+          <span wx:if='{{d.user.official}}' class='official'>{{d.user.official || '未绑定'}}</span>
+          <span wx:if='{{d.user.official}}' style='padding:0 10rpx;'>|</span>
+          <span>{{d.created_at_diff}}</span>
+        </view>
+      </view>
+    </view>
+    <view class='part_right'>
+      <!-- <image class='posts_edit' src='/img/downArrow2.png'></image> -->
+      <postsEdit postsInfo='{{d}}' class='posts_edit' catch:iconChange='iconChange'></postsEdit>
+    </view>
+  </view>
+
+  <!--帖子标题  -->
+  <view class='postsTitle flex' id='{{d.id}}' bindtap='postsDetail'>
+    <text class='label {{d.label.id == 2 ? "label2" : ""}} {{d.label.id == 3 ? "label3" : ""}} {{d.label.id == 4 ? "label4" : ""}}' wx:if='{{d.label != null && d.label.id != 0}}'>{{d.label.name}}</text>
+
+    <view class='title'>
+      <span>{{d.title}}</span>
+      <image wx:if='{{d.mark == "new"}}' class='markIcon' src='/img/new.png'></image>
+      <image wx:if='{{d.mark == "hot"}}' class='markIcon' src='/img/hot.png'></image>
+      <image wx:if='{{d.status == 1}}' class='closeIcon' src='/img/closeIcon.png'></image>
+    </view>
+
+  </view>
+
+  <!--帖子内容  -->
+  <view class='postsContent' id='{{d.id}}' bindtap='postsDetail'>
+    <text decode='true' space='true' class='text'>{{d.excerpt}}</text>
+    <view class='pics flex'>
+      <block wx:for='{{d.body_image}}' wx:for-item='pic' wx:for-index='idx' wx:key='item.url'>
+        <image wx:if='{{idx < 3}}' mode='aspectFill' class='pic' src='{{pic}}' catchtap='picPreview' data-current='{{pic}}' data-urls='{{d.body_image}}'>
+          <view class='picNum' wx:if='{{idx == 2 && d.body_image.length >=2}}'>共{{d.body_image.length}}张</view>
+        </image>
+      </block>
+    </view>
+  </view>
+
+  <!--操作选项  -->
+  <view class='feedback {{isMy?"isMy2":""}} flex'>
+    <button class='address feedbackItem flex' open-type='share' data-id='{{d.id}}'>
+      <image class='icon_address' src='/img/icon_share.png'></image>
+      <view>分享</view>
+    </button>
+
+    <view class='like feedbackItem flex' id='{{d.id}}' catchtap='postsDetail'>
+      <image class='icon_reply' src='/img/like.png'></image>
+      <view>{{d.reply_count}}</view>
+    </view>
+
+    <view class='praise feedbackItem flex' style='margin-right:25rpx;' id='{{d.id}}' catchtap='praise'>
+      <image wx:if='{{d.is_like == false || d.is_like == null}}' class='icon_praise' src='/img/s_praise.png'></image>
+      <image wx:else class='icon_praise' src='/img/s_praise2.png'></image>
+      <view>{{d.like_count}}</view>
+    </view>
+
+  </view>
+</view>

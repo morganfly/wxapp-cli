@@ -1,0 +1,46 @@
+<!--top  -->
+<!-- <top title='咸豆日志'></top> -->
+
+<view class='dd_info'>
+  <view style='height:22rpx;'></view>
+  <view class='dd_img'>
+    <view class='dd_num'>{{coin}}</view>
+  </view>
+  <view class='btnGroup flex'>
+
+    <navigator url='/pages/exchange/dd_exchange/dd_exchange'>
+      <button class='btn exchangeBtn'>兑换专区</button>
+    </navigator>
+
+    <navigator url='/pages/exchange/dd_get/dd_get'>
+      <button class='btn getddBtn'>赚取豆子</button>
+    </navigator>
+
+  </view>
+</view>
+
+<!--咸豆日志  -->
+<scroll-view class='dd_log bg_grey tc' scroll-y='true' style='height:{{scrollHeight}};' bindscrolltolower='loadMore'>
+  <image class='dd_intro_text' src='/img/dd_intro_text.png'></image>
+  <block wx:for='{{logs}}' wx:key='index'>
+    <template is='log' data='{{...item}}'></template>
+  </block>
+  <view class='noLog flex' wx:if='{{logs.length == 0}}'>暂无</view>
+
+  <!--数据加载完毕  -->
+  <view class='loadAll' wx:if='{{loadAll}}'>数据加载完毕</view>
+</scroll-view>
+
+
+
+
+<template name='log'>
+  <view class='log flex'>
+    <view class='left'>
+      <view class='title'>{{content}}</view>
+      <view class='date'>时间: {{created_at}}</view>
+    </view>
+    <view class='right dd_num' wx:if='{{type == 1}}'>+ {{number}}</view>
+    <view class='right dd_num reduce' wx:if='{{type == 2}}'>- {{number}}</view>
+  </view>
+</template>

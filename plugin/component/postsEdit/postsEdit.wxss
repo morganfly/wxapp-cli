@@ -1,0 +1,77 @@
+.posts_edit_icon {
+  width: 27rpx;
+  height: 14rpx;
+  padding: 10px;
+}
+
+.posts_edit {
+  position: relative;
+  z-index: 99;
+}
+
+.dialog_edit {
+  position: absolute;
+  left: -50%;
+  top: 50rpx;
+  border: 2rpx solid grey;
+  width: 340rpx;
+  background: white;
+
+}
+
+.options_frame{
+ border-radius: 30rpx;
+}
+
+.options_item {
+  border-bottom: 2rpx solid grey;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #3c3534;
+}
+
+.options_item:last-child {
+  border-bottom: none;
+}
+
+.shareBtn {
+  background-color: white;
+  color: #3c3534;
+  border-radius: 30rpx;
+}
+
+.shareBtn::after {
+  border: none;
+}
+
+/*----------------pop魔改------------------------------  */
+
+.reason_delete {
+  border: 2rpx solid #848484;
+  border-radius: 4rpx;
+  padding: 20rpx;
+  margin: 20rpx;
+}
+
+.dialog_edit {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.options_frame {
+  position: absolute;
+  width: 500rpx;
+  height: auto;
+  background: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+ 

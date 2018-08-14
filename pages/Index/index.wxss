@@ -1,0 +1,99 @@
+page {
+  overflow: visible;
+}
+
+/*------------------header-----------------------  */
+
+.downArrow2 {
+  width: 27rpx;
+  height: 14rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+
+.dd_num {
+  color: #3d3d3d;
+  padding-right: 57rpx;
+}
+
+/*------------------导航--------------------  */
+
+.nav {
+  padding: 0 27rpx;
+  background: #f7f7f7;
+  box-shadow: 2rpx 2rpx 2rpx #f7f7f7;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  width: 25%;
+  vertical-align: middle;
+  align-items: center;
+  padding: 26rpx 0;
+  justify-content: center;
+  font-size: "Microsoft YaHei";
+}
+
+.navItem .subsection_text{
+  position: relative;
+}
+
+.navItem .redPoint {
+  width: 20rpx;
+  height: 20rpx;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  right: -20rpx;
+  top: -15rpx;
+}
+
+.navItem image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  margin-top: 5rpx;
+}
+
+/*----------------动态通知-----------------------  */
+
+.newMessage {
+  text-align: center;
+  background: #ffeac1;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 32rpx;
+  color: #ff8236;
+  margin: 12rpx 0;
+}
+
+/*-----------授权--------------------------------  */
+
+.getAuth {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.authBtn {
+  width: 300rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*-----------------------------------------------  */
+
+.loadAll {
+  border-top: none;
+  margin-top: -25rpx;
+}

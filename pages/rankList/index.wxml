@@ -1,0 +1,76 @@
+<!-- banner -->
+<image class='banner' src='/img/banner_rank.png' alt=''></image>
+
+<!--tab标签页  -->
+<view class="tabTitle flex">
+  <view class="titleItem {{currentTab==0 ? 'checked' : ''}}" data-current='0' bindtap='tabIndex'>今日热帖</view>
+  <view class="titleItem {{currentTab==1 ? 'checked' : ''}}" data-current='1' bindtap='tabIndex'>一周红人</view>
+  <view class="titleItem {{currentTab==2 ? 'checked' : ''}}" data-current='2' bindtap='tabIndex'>著名大佬</view>
+</view>
+
+<view class='txt'>每三十分钟更新一次</view>
+
+
+<!--tab内容页  -->
+<swiper current="{{currentTab}}" class="tabBox" duration="300" style="height:{{scrollHeight}}" bindchange="tabBox" circular='true'>
+  <!--今日热帖  -->
+  <swiper-item>
+    <template is='posts'></template>
+  </swiper-item>
+
+  <!--一周红人  -->
+  <swiper-item>
+    <template is='user'></template>
+  </swiper-item>
+
+  <!--著名大佬  -->
+  <swiper-item>
+
+  </swiper-item>
+
+</swiper>
+
+
+
+
+<!-- 帖子 -->
+<template name='posts'>
+  <view class='topic flex'>
+    <view class='left flex'>
+      <view class='rankNum'>1</view>
+      <view class='title'>标题啥啊巴拉巴拉</view>
+    </view>
+    <view class='right flex'>
+      <image class='iconFire' src='/img/icon_fire.png'></image>
+      <view class='hotIndex'>99999</view>
+    </view>
+  </view>
+</template>
+
+
+<!-- 用户 -->
+<template name='user'>
+  <view class='user flex'>
+    <view class='avatarFrame'>
+      <image class='avatar' src='https://forum.sanguosha.com/static/avatar/008.png' alt=''></image>
+      <view class='rankNum'>1</view>
+    </view>
+    <view class='midContent'>
+      <view class='nickName'>云长寓意</view>
+      <view class='office'>千夫长</view>
+      <view class='data flex'>
+        <view class='dataItem flex'>
+          主题 9999
+        </view>
+        <view class='dataItem flex'>
+          获赞 9999
+        </view>
+        <view class='dataItem flex'>
+          回复 9999
+        </view>
+      </view>
+    </view>
+    <view class='force btn'>关注</view>
+    <!-- <view class='forced btn'>取消关注</view> -->
+  </view>
+</template>

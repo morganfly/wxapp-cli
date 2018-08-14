@@ -1,0 +1,72 @@
+.app_pop_mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+ .app_pop {
+  position: fixed;
+  left: 40rpx;
+  right: 40rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10rpx;
+  background-position: 50% 0;
+  background-color: #f2f2f2;
+  padding: 20rpx 30rpx;
+  z-index: 9999;
+} 
+
+.app_pop_title {
+  font-size: 40rpx;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.app_pop_content {
+  color: black;
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 0;
+  text-align: center;
+}
+
+.app_pop_close_out {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 12rpx;
+  top: 20rpx;
+  text-align: center;
+}
+
+.app_pop_close_out image {
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 25rpx;
+}
+
+.app_pop_foot {
+  display: flex;
+  padding-bottom: 40rpx;
+}
+
+.app_pop_foot .app_pop_btn {
+  flex: 1;
+}
+
+.app_pop_btn {
+  background-color: #ffa03e;
+  font-size: 40rpx;
+  color: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  margin: 20rpx;
+}

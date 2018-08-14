@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "postsEdit":"/plugin/component/postsEdit/postsEdit"
+  }
+}

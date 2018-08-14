@@ -1,0 +1,63 @@
+<!--top  -->
+<!-- <top title='咸豆专区'></top> -->
+
+<!--顶部  -->
+<view class='header flex'>
+  <view class='h_btn h_btn1'>
+    <span>剩余咸豆 :</span>
+    <span>{{coin}}</span>
+  </view>
+
+  <navigator url='/pages/exchange/dd_exchange/dd_exchange'>
+    <view class='h_btn h_btn2'>
+      咸豆兑换专区
+    </view>
+  </navigator>
+</view>
+
+<!--福利专区  -->
+
+<view class='giftFrame'>
+  <view class='title'>
+    <span>每日福利</span>
+  </view>
+  <view style='padding:0 27rpx;'>
+    <block wx:for='{{dd_tasks}}' wx:key='index'>
+      <template is='gift' data='{{...item}}'></template>
+    </block>
+  </view>
+</view>
+
+
+<!--模版_奖励任务  -->
+<template name='gift'>
+  <view class='gift flex'>
+    <view class='flex'>
+      <image class='pic' src='/img/dd.png'></image>
+      <view class='info'>
+        <view class='text'>{{content}}</view>
+        <view class='dd_num'>咸豆x{{bonus}}</view>
+      </view>
+    </view>
+    <view>
+      <!--未领取且符合要求  -->
+      <view wx:if='{{is_bonus == 0 && is_finish == true}}' class='exchangeBtn1 border' id='{{id}}' bindtap='getBonus'>
+        领取
+      </view>
+
+      <!--未领取但不符合要求  -->
+      <view wx:if='{{is_bonus == 0 && is_finish == false}}' class='exchangeBtn2' id='{{id}}'>
+        {{user_finish_num}}/{{value}}
+      </view>
+
+      <!--已领取  -->
+      <view wx:if='{{is_bonus == 1}}' class='exchangeBtn3' id='{{id}}'>
+        已领取
+      </view>
+
+      <!-- 仅能领取一次文案  -->
+      <view wx:if='{{cycle === "forever"}}' class='exchange_text'>仅能领取一次</view>
+    </view>
+
+  </view>
+</template>

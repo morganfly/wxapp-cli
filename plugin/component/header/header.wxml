@@ -1,0 +1,43 @@
+<view id='header' class='flex header'>
+
+  <view class='flex'> 
+    <!--头像  -->
+    <view catchtap='toMy' id='{{userInfo.id}}' style='margin-right:10rpx;'>
+      <image class='avatar' src='{{userInfo.avatar || userInfo.avatarUrl}}'></image>
+      <slot name='downArrow'></slot>
+    </view>
+
+    <!--用户信息  -->
+    <view class='info'>
+      <view class='nickName flex' style='margin-bottom:6rpx;'>
+        <view wx:if='{{!noNickName}}' class='leftWidth'>昵称</view>
+        <view wx:if='{{!noNickName}}' style='margin-left:5rpx;'>:</view>
+        <view class='f26' style='color:#3c3534;max-width:200rpx;'>{{userInfo.nick_name}}</view>
+        <view class='level'>{{userInfo.level}}</view>
+        <view class='role' wx:if='{{userInfo.role}}'>{{userInfo.role[0].desc}}</view>
+      </view>
+
+      <view class='guanjie flex'>
+        <view wx:if='{{!noNickName}}' class='leftWidth'>官阶</view>
+        <view wx:if='{{!noNickName}}' style='margin-left:5rpx;'> :</view>
+        <view wx:if='{{userInfo.dobest_account}}' class='f26' style='color:##848484;'>{{userInfo.official}}</view>
+        <span wx:if='{{postsDetail.created_at_diff}}' style='padding:0 10rpx;'>|</span>
+        <span wx:if='{{postsDetail.created_at_diff}}'>{{postsDetail.created_at_diff}}</span>
+        <view wx:if='{{!userInfo.dobest_account && myId == userInfo.id}}' class='f26' style='color:#2767be;' catchtap='bindAccount'>点击绑定后显示</view>
+      </view>
+    </view>
+  </view>
+
+  <!--咸豆  -->
+  <slot name='dd'></slot>
+
+  <!-- 时间   -->
+  <slot name='time'></slot>
+
+  <!--操作栏  -->
+  <view class='optionsFrame' wx:if='{{optionsShow}}'>
+    <view wx:if='{{myId == userInfo.id || userPermissions.edit_topic}}' class='options_item' bindtap='postsEdit'>编辑帖子</view>
+    <view wx:if='{{myId == userInfo.id || userPermissions.delete_topic}}' class='options_item' bindtap='postsDelete'>删除帖子</view>
+    <view wx:if='{{userPermissions.close_topic}}' class='options_item' bindtap='postsClose'>关闭帖子</view>
+  </view>
+</view>

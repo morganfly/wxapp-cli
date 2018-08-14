@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "咸豆日志",
+  "navigationBarBackgroundColor": "#2f2f2f",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "header": "/plugin/component/header/header",
+    "top": "/plugin/component/top/top"
+  }
+}

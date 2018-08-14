@@ -1,0 +1,21 @@
+<!-- 搜索框 -->
+<view class='searchFrame flex'>
+  <view class='left'>
+    <input class='searchInput' type='text' confirm-type='search' value='{{keyword}}' bindinput='searchInput' bindconfirm='searchCertain'></input>
+    <image class='icon_search' src='/img/icon_search.png'></image>
+    <image wx:if='{{keyword}}' class='icon_cancel' src='/img/icon_cancel.png' bindtap='searchInputClear'></image>
+  </view>
+
+  <view class='right' bindtap='searchCertain'>确认</view>
+
+</view>
+
+<view class='title'>相关帖子</view>
+
+
+<!--帖子列表  -->
+<block wx:for='{{postsList}}' wx:key='item.data.name'>
+  <post d='{{item}}' isMy='{{true}}' noUser='{{true}}' bindmyevent='postsDetail'></post>
+</block>
+<!--数据加载完毕  -->
+<view class='loadAll' wx:if='{{loadAll}}'>数据加载完毕</view>

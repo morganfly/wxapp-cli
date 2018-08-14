@@ -1,0 +1,85 @@
+<!--top  -->
+<!-- <top title='我的回复'></top> -->
+
+
+<!--回复弹窗  -->
+<reply isShow='{{isShow}}' bindreplyShow='replyShow' parent_id='{{parent_id}}' target_user_id='{{target_user_id}}' topic='{{id}}'></reply>
+
+
+<!--动态列表  -->
+<block wx:for='{{unread_list}}' wx:key='key'>
+  <template is='message' data='{{...item}}'></template>
+</block>
+
+
+<!--动态 模版  -->
+<template name='message'>
+  <view class='message' data-unread-id='{{id}}' id='{{data.topic_id}}' data-read='{{read_at}}' data-type='{{data.type}}' data-reply-id='{{data.reply_id}}' bindtap='message'>
+    <view wx:if='{{data.type == "replyReply" || data.type =="reply" || data.type == "like" || data.type == "collection" || data.type == "userFocus"}}' class='beReplyed flex'>
+      <view class='name' bindtap='userDetail' data-id="{{data.user_id}}">{{data.user_name}}</view>
+      <view class='colon'> : </view>
+      <view wx:if='{{data.type == "replyReply" || data.type =="reply"}}' class='content'>{{data.reply_contents}}</view>
+      <view wx:if='{{data.type == "like"}}' class='content'> 点赞了你</view>
+      <view wx:if='{{data.type == "collection"}}' class='content'> 收藏了你的帖子</view>
+      <view wx:if='{{data.type == "userFocus"}}' class='content'> 关注了你</view>
+    </view>
+
+    <!--帖子被删除  -->
+    <view wx:if='{{data.type =="topicdelete"}}' class='beReplyed flex'>
+      <view class=''>您的帖子因{{data.delete_reason}}已被管理员删除</view>
+    </view>
+
+    <!--头像被删除  -->
+    <view wx:if='{{data.type =="deleteavatar"}}' class='beReplyed flex'>
+      <view class=''>您的头像涉嫌违规，已被管理员删除，请在3天后重新上传头像</view>
+    </view>
+
+    <!--被禁言  -->
+    <view wx:if='{{data.type =="forbiduser"}}' class='beReplyed flex'>
+      <view class='content'>您已被管理员禁言</view>
+    </view>
+
+    <!--回复主题  -->
+    <view wx:if='{{data.type == "reply"}}' class='replyFrame flex reply' style='justify-content: space-between;'>
+      <view class='left flex'>
+        <view class='typeText'>回复了我的主题</view>
+        <view class='colon' style='color:#848484'> : </view>
+        <view class='content2'>{{data.topic_title}}</view>
+      </view>
+      <view class='feedback flex' data-topic='{{data.topic_id}}' data-parentId='{{data.reply_id}}' data-targetId='{{data.user_id}}' catchtap='reply'>
+        <image class='reply_icon' src='/img/chat.png'></image>
+        <view class='text'>回复</view>
+      </view>
+    </view>
+
+    <!--回复回复  -->
+    <view wx:if='{{data.type == "replyReply"}}' class='replyFrame flex replyReply' style='justify-content: space-between;'>
+      <view class='left flex'>
+        <view class='typeText'>回复了我的评论</view>
+        <view class='colon' style='color:#848484'> : </view>
+        <view class='content2'>{{data.parentReply_contents}}</view>
+      </view>
+      <view class='feedback flex' data-topic='{{data.topic_id}}' data-parentId='{{data.parentReply}}' data-targetId='{{data.user_id}}' catchtap='reply'>
+        <image class='reply_icon' src='/img/chat.png'></image>
+        <view class='text'>回复</view>
+      </view>
+    </view>
+
+    <!--点赞我的主题  -->
+    <view wx:if='{{data.type == "like"}}' class='replyFrame flex like'>
+      <view class='typeText'>点赞我的主题</view>
+      <view class='colon' style='color:#848484'> : </view>
+      <view class='content2'>{{data.topic_title}}</view>
+    </view>
+
+    <!--收藏我的主题  -->
+    <view wx:if='{{data.type == "collection"}}' class='replyFrame flex mark'>
+      <view class='typeText'>收藏主题</view>
+      <view class='colon' style='color:#848484'> : </view>
+      <view class='content2'>{{data.topic_title}}</view>
+    </view>
+
+    <!--未读标识  -->
+    <view wx:if='{{! read_at}}' class='redPointer'></view>
+  </view>
+</template>

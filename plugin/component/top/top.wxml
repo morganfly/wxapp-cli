@@ -1,0 +1,5 @@
+<view class='top-top'></view>
+<view class='top'>
+  <image wx:if='{{prevPage || currentUrl === "pages/posts/index/index"}}' class='icon' src='/img/leftArrow.png' bindtap='goBack'></image>
+  <span class='title'>{{title}}</span>
+</view>

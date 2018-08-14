@@ -1,0 +1,96 @@
+/*-------------轮播-----------------  */
+
+swiper {
+  height: 440rpx;
+  background: #f7f7f7;
+}
+
+.banner image {
+  width: 750rpx;
+  height: 440rpx;
+  display: block;
+}
+
+.dd_num {
+  color: #3d3d3d;
+  padding-right: 57rpx;
+}
+
+/*------------兑换-----------------------  */
+
+.frame {
+  background: #f7f7f7;
+  padding: 20rpx 27rpx;
+  margin-top: 12rpx;
+}
+
+.title {
+  margin-bottom: 15rpx;
+  justify-content: space-between;
+}
+
+.title .type {
+  font-size: 28rpx;
+}
+
+.title .more {
+  align-items: center;
+}
+
+.title span {
+  color: #bebebe;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.title .more image {
+  width: 14rpx;
+  height: 27rpx;
+}
+
+.product {
+  margin-right: 20rpx;
+}
+
+.product:last-child {
+  margin-right: 0;
+}
+
+.product view {
+  margin: 5rpx 0;
+}
+
+.pro_img {
+  width: 218rpx;
+  height: 161rpx;
+}
+
+.pro_name {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+
+.pro_intro {
+  font-size: 24rpx;
+  color: #848484;
+}
+
+.pro_price {
+  font-size: 24rpx;
+  color: #ca831d;
+}
+
+.exchangeBtn {
+  background: #ecdbb9;
+  width: 220rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  color: #2f2f2f;
+}
+
+.exchangeList {
+  width: 100%;
+  overflow: hidden;
+}

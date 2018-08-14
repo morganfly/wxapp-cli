@@ -1,0 +1,91 @@
+.dd_info {
+  width: 100%;
+  height: 325rpx;
+  text-align: center;
+  background: #6c6464;
+  background-image: linear-gradient(#958e8e 1px, transparent 0),
+                      linear-gradient(90deg, #958e8e 1px, transparent 0),
+                      linear-gradient(#958e8e 1px, transparent 0),
+                      linear-gradient(90deg, 958e8e 1px, transparent 0);
+  background-size: 4px 4px, 4px 4px, 4px 4px, 4px 4px;
+}
+
+.dd_info .dd_img {
+  width: 172rpx;
+  height: 172rpx;
+  margin: 20rpx auto;
+  margin-top: 0;
+  background: url('https://forum.sanguosha.com/static/image/dd_circle.png') no-repeat;
+  background-size: 100% 100%;
+  border-radius: 50%;
+}
+
+.dd_info .dd_num {
+  padding-top: 100rpx;
+  font-size: 44rpx;
+  color: #ffedcb;
+}
+
+.dd_info .btnGroup {
+  width: 700rpx;
+  margin: 0 auto;
+}
+
+.dd_info .btn {
+  width: 340rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #e8d4ad;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.dd_info .btn:first-child {
+  margin-right: 27rpx;
+}
+
+/*-----------------log-------------------------  */
+
+.dd_intro_text {
+  width: 693rpx;
+  height: 42rpx;
+  margin: 0 auto;
+  margin-top: 25rpx;
+}
+
+.log {
+  padding: 25rpx 27rpx 45rpx 27rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.log .left {
+  text-align: left;
+}
+
+.log .title {
+}
+
+.log .date {
+  margin-top: 22rpx;
+  color: #a8a8a8;
+  font-size: 24rpx;
+}
+
+.log .dd_num {
+  font-size: 40rpx;
+  color: #d07500;
+}
+
+.log .reduce {
+  color: #09b211;
+}
+
+.noLog {
+  font-size: 44rpx;
+  margin-top: 100rpx;
+  color: #ccc;
+  justify-content: center;
+  flex-direction: column;
+}

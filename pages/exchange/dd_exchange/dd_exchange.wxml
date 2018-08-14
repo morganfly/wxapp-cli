@@ -1,0 +1,71 @@
+<!--top  -->
+<!-- <top title='兑换专区'></top> -->
+
+<!--用户信息  -->
+<header userInfo='{{userInfo}}' myId='{{myId}}'>
+  <view slot='dd' class='dd' bindtap='dd_history'>
+    <view>咸豆</view>
+    <view class='dd_num'>{{coin}}</view>
+  </view>
+</header>
+ 
+<!--banner轮播  -->
+<swiper class='banner' autoplay='true' current='{{bannerIndex}}' interval='4000' duration='500' circular='true' indicator-dots='true' indicator-active-color='#ffffff' indicator-color='rgba(255,255, 255, .3)'>
+  <block wx:for="{{banner}}" wx:key='item'>
+    <swiper-item>
+      <image src="{{item.picture}}" class="slide-image" data-index='{{item.id}}' bindtap='bannerLink' />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--热门兑换  -->
+<view class='frame border'>
+  <view class='title flex'>
+    <view class='type black'>热门兑换</view>
+    <view class='more flex' data-category='hot' bindtap='more'>
+      <span>更多</span>
+      <image class='rightArrow' src='/img/rightArrow.png'></image>
+    </view>
+  </view>
+
+  <!-- 兑换商品  -->
+  <view class='exchangeList flex'>
+    <block wx:for='{{hot_productList}}' wx:key='index'>
+      <template is='product' data='{{...item}}'></template>
+    </block>
+  </view>
+</view>
+
+<!--热门兑换  -->
+<view class='frame border'>
+  <view class='title flex'>
+    <view class='type black'>为你推荐</view>
+    <view class='more flex' data-category='recommend' bindtap='more'>
+      <span>更多</span>
+      <image class='rightArrow' src='/img/rightArrow.png'></image>
+    </view>
+  </view>
+
+  <!-- 兑换商品  -->
+  <view class='exchangeList flex'>
+    <block wx:for='{{recommend_productList}}' wx:key='index'>
+      <template is='product' data='{{...item}}'></template>
+    </block>
+  </view>
+</view>
+
+
+
+
+
+
+<!-- 兑换商品模版  -->
+<template name='product'>
+  <view id='{{id}}' class='product tc' bindtap='proDetail'>
+    <image class='pro_img' src='{{thumbnail}}'></image>
+    <view class='pro_name'>{{name}}</view>
+    <view class='pro_intro'>{{slogan}}</view>
+    <view class='pro_price'>{{price}}咸豆</view>
+    <button id='{{id}}' class='exchangeBtn border' catchtap='pro_exchange'>立即兑换</button>
+  </view>
+</template>

@@ -1,0 +1,4 @@
+<!--top  -->
+<!-- <top title='绑定帐号'></top> -->
+
+<web-view wx:if='{{src}}' src="{{src}}"></web-view>

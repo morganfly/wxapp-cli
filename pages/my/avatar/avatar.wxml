@@ -1,0 +1,40 @@
+<!--top  -->
+<!-- <top title='修改资料'></top> -->
+
+<!--修改昵称  -->
+<view class='user_nickName bg_white border' wx:if='{{userInfo.nickname_is_edited == 0}}'>
+  <view class='n_text'>修改昵称:</view>
+  <view class='frame flex'>
+    <view wx:if='{{userInfo.nickname_is_edited == 1}}' class='n_input'>{{userInfo.nick_name}}</view>
+    <input wx:else class='n_input' value='{{userInfo.nick_name}}' bindblur='nickNameInput'></input>
+    <button wx:if='{{userInfo.nickname_is_edited == 0}}' class='certain' bindtap='nickName'>确定修改</button>
+  </view>
+  <view class='n_text2'>昵称仅可修改一次</view>
+</view>
+
+<!--修改头像  -->
+<view class='user_avatar bg_white border'>
+  <view class='n_text'>修改头像:</view>
+
+  <view class='type'>方法一 : 选择相册中的照片,上传编辑自己的头像</view>
+
+  <view class='type flex'>
+    <image class='choosePic' src='/img/chooseAvatar.png' bindtap='customAvatar'></image>
+    <view class='chooseText'>新头像不允许涉及政治敏感和色情话题,否则将被封号</view>
+  </view>
+
+  <view class='type'>方法二 : 选择推荐头像,快速上传优质头像</view>
+
+
+  <!--头像库  -->
+  <view class='lab_avatar'>
+    <block wx:for='{{avatarList}}' wx:key='index'>
+      <image id='{{item.id}}' class='avatar {{(index + 1) % 5 == 0 ? "no_margin" : ""}} {{item.check?"check":""}}' src='{{item.path}}' bindtap='chooseAvatar'></image>
+    </block>
+  </view>
+
+  <view class='flex' style=' justify-content: center;'>
+    <button class='certain' bindtap='AvatarEdit'>确定修改</button>
+  </view>
+
+</view>

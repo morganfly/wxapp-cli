@@ -1,0 +1,113 @@
+/*--------------顶部------------------------  */
+
+.header {
+  padding: 30rpx 27rpx;
+  background: #f7f7f7;
+}
+
+.header .h_btn {
+  width: 334rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #e6e6e6;
+  border-radius: 8rpx;
+  text-align: center;
+  color: #2f2f2f;
+  font-size: 28rpx;
+  vertical-align: middle;
+}
+
+.header .h_btn:last-child {
+  margin-left: 30rpx;
+  background: #e8d4ad;
+  font-size: 32rpx;
+}
+
+.header .h_btn span:first-child {
+  color: #848484;
+  margin-right: 10rpx;
+}
+
+.header .h_btn span:last-child {
+  font-size: 34rpx;
+}
+
+/*---------------福利专区--------------------  */
+
+.giftFrame {
+  margin-top: 18rpx;
+  background: #f7f7f7;
+}
+
+.giftFrame .title {
+  padding: 25rpx 0;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 32rpx;
+}
+
+.giftFrame .title span {
+  padding-left: 27rpx;
+}
+
+.giftFrame .gift {
+  padding: 30rpx 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.gift .pic {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+
+.gift .text {
+  font-size: 30rpx;
+  color: #3c3534;
+}
+
+.gift .dd_num {
+  font-size: 30rpx;
+  color: #a8a8a8;
+  padding-top: 20rpx;
+}
+
+.gift .exchangeBtn1 {
+  background: #eaeaea;
+  text-align: center;
+  line-height: 55rpx;
+  width: 135rpx;
+  height: 55rpx;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+}
+
+.gift .exchangeBtn2 {
+  background: #e6e6e6;
+  text-align: center;
+  line-height: 55rpx;
+  width: 160rpx;
+  height: 55rpx;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+  color: #2f2f2f;
+}
+
+.gift .exchangeBtn3 {
+  background: #e6e6e6;
+  text-align: center;
+  line-height: 55rpx;
+  width: 135rpx;
+  height: 55rpx;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+  color: #a8a8a8;
+}
+
+
+.exchange_text{
+  font-size: 22rpx;
+  text-align: center;
+  margin-top: 10rpx;
+  color: #a8a8a8;
+}

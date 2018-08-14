@@ -1,0 +1,29 @@
+<!--top  -->
+<!-- <top title='商品详情'></top> -->
+
+<image class='pro_img' src='{{picture}}'></image>
+
+<template is='intro' data='{{...pro_info}}'></template>
+
+<template is='intro' data='{{...pro_intro}}'></template>
+
+<template is='intro' data='{{...pro_date}}'></template>
+
+<template is='intro' data='{{...pro_rule}}'></template>
+
+<view style='height:90rpx;'></view>
+
+<view class='btnFrame'>
+  <button class='btn' bindtap='pro_exchange'>立即兑换</button>
+</view>
+
+
+
+<!--template  -->
+<template name='intro'>
+  <view class='frame' wx:if='{{text || rule}}'>
+    <view class='title'>{{title}}</view>
+    <text wx:if="{{rule}}" class='text'>每日最多兑换{{rule}}次</text>
+    <text wx:if="{{!rule}}" class='text'>{{text}}</text>
+  </view>
+</template>

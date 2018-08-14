@@ -1,0 +1,77 @@
+@import '../../../pages/posts/public/public.wxss';
+@import '../../../app.wxss';
+@import '../../../plugin/importServer/emoji/emoji.wxss';
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.bg_white {
+  background: white;
+}
+
+.postsPublish {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.cancel {
+  color: #06518e;
+  font-size: 32rpx;
+  margin-right: 20rpx;
+  font-weight: 550;
+}
+
+.certain {
+  background: #3bab03;
+  color: white;
+  border-radius: 8rpx;
+  padding: 7rpx 21rpx;
+  font-size: 32rpx;
+  align-items: center;
+}
+
+/*----------------------------图片--------------------------------  */
+
+.imgFrame {
+  padding: 27rpx;
+  flex-wrap: wrap;
+}
+
+.previewImg {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 10rpx;
+}
+
+.imgItem {
+  position: relative;
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.imgDelete {
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 25rpx;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+}

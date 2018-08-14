@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/Index/index",
+    "pages/bindAccount/bindAccount",
+    "pages/my/index/index",
+    "pages/my/avatar/avatar",
+    "pages/my/mark/mark",
+    "pages/my/fans/fans",
+    "pages/my/focusUser/focusUser",
+    "pages/my/newMessage/newMessage",
+    "pages/my/customAvatar/customAvatar",
+    "pages/my/badge/badge",
+    "pages/posts/index/index",
+    "pages/posts/public/public",
+    "pages/posts/address/address",
+    "pages/posts/search/search",
+    "pages/specialPosts/selectPosts/selectPosts",
+    "pages/specialPosts/activity/activity",
+    "pages/specialPosts/competition/competition",
+    "pages/specialPosts/talk/talk",
+    "pages/specialPosts/wine/wine",
+    "pages/specialPosts/search/search",
+    "pages/exchange/dd_get/dd_get",
+    "pages/exchange/dd_exchange/dd_exchange",
+    "pages/exchange/dd_history/dd_history",
+    "pages/exchange/pro_list/pro_list",
+    "pages/exchange/pro_detail/pro_detail",
+    "pages/rankList/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  }
+}

@@ -1,0 +1,24 @@
+<view hidden="{{!isShow}}">
+  <view class='app_pop_mask'></view>
+  <view class="app_pop">
+    <view class='app_pop_close_out' catchtap='handleClose' wx:if="{{!noclosebtn}}">
+      <image src='../../../img/btn_close.png'></image>
+    </view>
+    <view class='app_pop_title'>{{title}}</view>
+    <!-- 2中content 方式一种是 简单的内容提示则直接传达content 即可  -->
+    <!-- 另一种通过slot可以嵌入页面的wxml-->
+    <scroll-view class='app_pop_content' wx:if="{{content}}" scroll-y style="height:{{height}}px">
+      {{content}}
+    </scroll-view>
+
+    <slot name="pop1"></slot>
+    <slot name="pop2"></slot>
+    <slot name="pop3"></slot>
+
+
+    <view class='app_pop_foot'>
+      <view class='app_pop_btn app_pop_cancelbtn' catchtap='handleCanbtn' wx:if="{{cancelBtnText}}">{{cancelBtnText}}</view>
+      <view class='app_pop_btn app_pop_okbtn' catchtap='handleOkbtn' wx:if="{{okBtnText}}">{{okBtnText}}</view>
+    </view>
+  </view>
+</view>

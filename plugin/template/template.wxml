@@ -1,0 +1,17 @@
+<!--帖子简介  -->
+<template name='posts'>
+  <view class='posts' id='{{id}}' bindtap='postsDetail'>
+    <view class='postsTitle flex'>
+      <view class='label'>颜值</view>
+      <view class='title'>{{title}}</view>
+    </view>
+    <view class='postsIntro'>
+      {{body}}
+    </view>
+    <view class='imgFrame flex'>
+      <block wx:for='{{body_image}}' wx:key='index'>
+        <image class='postsImg' src='{{item}}'></image>
+      </block>
+    </view>
+  </view>
+</template>

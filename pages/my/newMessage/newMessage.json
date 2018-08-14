@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#2f2f2f",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的提醒",
+  "usingComponents": {
+    "post": "/plugin/component/posts/posts",
+    "reply": "/plugin/component/reply/reply",
+    "top": "/plugin/component/top/top"
+  }
+}

@@ -1,4 +1,3 @@
-// const apiUrl = 'https://forum.sanguosha.com';
 const apiUrl = 'https://forum.hzyoka.com';
 
 const url = (url) => {
@@ -7,7 +6,8 @@ const url = (url) => {
 }
 
 
+//  引用服务器图片地址管理 
 
 export default {
-  test: 'www.baidu.com'
+  avatar_demo: url('/static/avatar/008.png')
 }

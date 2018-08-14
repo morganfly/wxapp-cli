@@ -1,112 +1,22 @@
-<!--top  -->
-<!-- <top title='三国咸话'></top> -->
-
 <!--授权弹窗  -->
 <pop id="popTip2" title="获取授权" content="需要获取您的用户信息，请前往授权" height="50" noclosebtn>
   <view slot="pop1">
-    <button wx:if="{{canIUse}}" open-type="getUserInfo" lang='zh_CN' bindgetuserinfo="bindGetUserInfo" style='color:#439057'>立即授权</button>
-    <view wx:else>请升级微信版本</view>
+    <button open-type="getUserInfo" lang='zh_CN' bindgetuserinfo="bindGetUserInfo" style='color:#439057'>立即授权</button>
   </view>
 </pop>
 
 
-<!-- <scroll-view scroll-y='true' style='height:{{scrollHeight}};' bindscrolltolower='loadMore'> -->
 
-<!--用户信息  -->
-<header userInfo='{{userInfo}}' myId='{{userInfo.id}}'>
-  <view slot='downArrow'>
-    <image class='downArrow2' src='/img/downArrow2.png'></image>
-  </view>
+<!-- 主页 -->
+<image class='avatar' src='{{userInfo.avatarUrl}}'></image>
 
-  <view slot='dd' class='dd' bindtap='dd_history'>
-    <view>咸豆</view>
-    <view class='dd_num'>{{coin}}</view>
-  </view>
-</header>
+<view class='nickName'>{{userInfo.nickName}}</view>
 
-<!--灰线  -->
-<view class='greyLine'></view>
+<image class='avatar' src='{{avatar_demo}}'></image>
 
-<!--导航栏  -->
-<view class='nav flex'>
-  <navigator class='navItem flex' url='/pages/specialPosts/selectPosts/selectPosts' style='justify-content:flex-start;'>
-    <image src='/img/select.png'></image>
-    <view class='subsection_text'>
-      精选
-      <view wx:if='{{subsection_message.label}}' class='redPoint'></view>
-    </view>
-  </navigator>
-  <navigator class='navItem flex' url='/pages/rankList/index'>
-    <image src='/img/rank.png'></image>
-    <view class='subsection_text'>
-      热榜
-      <view wx:if='{{subsection_message.zhujiu}}' class='redPoint'></view>
-    </view>
-  </navigator>
-  <navigator class='navItem flex' url='/pages/specialPosts/wine/wine'>
-    <image src='/img/wine.png'></image>
-    <view class='subsection_text'>
-      煮酒
-      <view wx:if='{{subsection_message.zhujiu}}' class='redPoint'></view>
-    </view>
-  </navigator>
-  <navigator class='navItem flex' url='/pages/specialPosts/talk/talk' style='justify-content:flex-end;'>
-    <image src='/img/talk.png'></image>
-    <view class='subsection_text'>
-      咸言
-      <view wx:if='{{subsection_message.xianyan}}' class='redPoint'></view>
-    </view>
-  </navigator>
-  <navigator class='navItem flex' url='/pages/specialPosts/search/search' style='justify-content:flex-start;'>
-    <image src='/img/search.png'></image>
-    <view class='subsection_text'>
-      搜索
-    </view>
-  </navigator>
-  <navigator class='navItem flex' url='/pages/specialPosts/activity/activity'>
-    <image src='/img/gift.png'></image>
-    <view class='subsection_text'>
-      活动
-      <view wx:if='{{subsection_message.activity}}' class='redPoint'></view>
-    </view>
-  </navigator>
-  <navigator class='navItem flex' url='/pages/exchange/dd_exchange/dd_exchange'>
-    <image src='/img/shop.png'></image>
-    <view class='subsection_text'>
-      商城
-      <!-- <view class='redPoint'></view> -->
-    </view>
-  </navigator>
-  <view class='navItem flex' style='justify-content:flex-end;' bindtap='moreSubsection'> 
-    <image src='/img/more.png'></image>
-    <view class='subsection_text'>
-      更多
-    </view>
-  </view>
+<view class='nickName'>app._pic示例</view>
+
+
+<view class='timerFrame'>
+  <timer></timer>
 </view>
-
-<!--动态通知  -->
-<navigator wx:if='{{unread_count}}' url='/pages/my/newMessage/newMessage'>
-  <view class='newMessage border'>
-    您有{{unread_count}}条新动态,点击查看 >
-  </view>
-</navigator>
-
-<!--留白  -->
-<view wx:if='{{!unread_count}}' style='height:15rpx;'></view>
-
-<!--帖子列表  -->
-<block wx:for='{{postsList}}' wx:key='item.data.name'>
-  <post wx:if='{{item.id != firstPostsId}}' d='{{item}}' bindmyevent='postsDetail'></post>
-</block>
-
-<!--数据加载完毕  -->
-<view class='loadAll' wx:if='{{loadAll}}'>数据加载完毕</view>
-
-<!--留白  -->
-<view style='height:92rpx;'></view>
-<!-- </scroll-view> -->
-
-
-<!--发布帖子按钮  -->
-<publishBtn class='border'></publishBtn>

@@ -6,6 +6,8 @@ module.exports = {
   socketOpen: false,
   socketMsgQueue: [],
 
+
+  
   init: function(callback) {
     let _this = this;
     let localUserId = wx.getStorageSync('userId');

@@ -24,38 +24,6 @@ page {
   display: flex;
 }
 
-.pd27 {
-  padding: 0 27rpx;
-}
-
-.black {
-  color: #2f2f2f;
-}
-
-.grey {
-  color: #848484;
-}
-
-.white {
-  color: #f7f7f7;
-}
-
-.orange {
-  color: #ca831d;
-}
-
-.bg_orange {
-  background: #ca831d;
-}
-
-.bg_white {
-  background: #f7f7f7;
-}
-
-.bg_grey {
-  background: #ebebeb;
-}
-
 .tc {
   text-align: center;
 }
@@ -83,76 +51,6 @@ page {
   display: flex;
 }
 
-/*-----------------帖子---------------------------  */
-
-.postsTitle {
-  /* align-items: center; */
-  margin-bottom: 20rpx;
-  margin-top: 20rpx;
-}
-
-.postsTitle .label {
-  width: 80rpx;
-  height: 30rpx;
-  line-height: 30rpx;
-  text-align: center;
-  background: #d32a0e;
-  color: white;
-  border-radius: 4rpx;
-  margin-right: 15rpx;
-  font-size: 24rpx;
-  /* padding: 10rpx; */
-  white-space: nowrap;
-}
-
-.postsTitle .title {
-  width: 650rpx;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 36rpx;
-  color: #3c3534;
-  display: flex;
-  align-items: center;
-}
-
-/*---------------没有更多提示-----------------------  */
-
-.loadAll {
-  border-top: 1px solid #e2e2e2;
-  padding: 26rpx 0ex;
-  font-size: 30rpx;
-  color: #bebebe;
-  text-align: center;
-}
-
-/*---------------用户信息---------------------  */
-
-.dd {
-  width: 160rpx;
-  height: 82rpx;
-  background: url(https://forum.sanguosha.com/static/image/dd_bg.png) no-repeat;
-  background-size: 100% 100%;
-  color: #848484;
-  font-size: 24rpx;
-  text-align: center;
-  padding-left: 20rpx;
-}
-
-.dd view:first-child {
-  padding-top: 10rpx;
-  padding-right: 57rpx;
-}
-
-.greyLine {
-  width: 698rpx;
-  height: 2rpx;
-  margin: 0 auto;
-  background: #e2e2e2;
-}
-
-/*-----------------modal---------------------------  */
-
 .modal {
   position: fixed;
   width: 100%;
@@ -167,12 +65,3 @@ page {
   z-index: 9;
 }
 
-/*-----------------发表话题--------------------------------  */
-
-publishbtn {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-}

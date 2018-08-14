@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "我的收藏",
-  "navigationBarBackgroundColor": "#2f2f2f",
-  "navigationBarTextStyle": "white",
-  "usingComponents": {
-    "post": "/plugin/component/posts/posts",
-    "top": "/plugin/component/top/top"
-  }
-}

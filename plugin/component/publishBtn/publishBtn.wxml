@@ -1,4 +1,0 @@
-<view class='publishBtn flex' bindtap='pubilshPosts'>
-  <image class='publish_icon' src='/img/pen.png'></image>
-  <view class='publish_btn'>发表话题</view>
-</view>

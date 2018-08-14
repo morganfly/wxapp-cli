@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "商品分类",
-  "navigationBarBackgroundColor": "#2f2f2f",
-  "navigationBarTextStyle": "white",
-  "usingComponents": {
-    "header": "/plugin/component/header/header",
-    "top": "/plugin/component/top/top"
-  }
-}

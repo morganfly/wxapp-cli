@@ -1,8 +1,0 @@
-<scroll-view scroll-y='true' style='height:{{scrollHeight}}' bindscrolltolower='loadMore'>
-  <!--帖子列表  -->
-  <block wx:for='{{postsList}}' wx:key='item.data.name'>
-    <post d='{{item}}' bindmyevent='postsDetail'></post>
-  </block>
-  <!--数据加载完毕  -->
-  <view class='loadAll' wx:if='{{loadAll}}'>数据加载完毕</view>
-</scroll-view>

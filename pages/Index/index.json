@@ -1,14 +1,9 @@
 {
-  "navigationBarTitleText": "三国咸话",
+  "navigationBarTitleText": "我的小程序",
   "navigationBarBackgroundColor": "#2f2f2f",
   "navigationBarTextStyle": "white",
   "usingComponents": {
-    "post": "/plugin/component/posts/posts",
-    "publishBtn": "/plugin/component/publishBtn/publishBtn",
     "timer": "/plugin/component/timer/timer",
-    "header": "/plugin/component/header/header",
-    "pop": "/plugin/component/pop/pop",
-    "postsEdit": "/plugin/component/postsEdit/postsEdit",
-    "top": "/plugin/component/top/top"
+    "pop": "/plugin/component/pop/pop"
   }
 }

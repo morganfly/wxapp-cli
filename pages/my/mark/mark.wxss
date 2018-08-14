@@ -1,5 +1,0 @@
-@import '../index/index.wxss';
-
-.posts{
-  padding-top: 0rpx;
-}

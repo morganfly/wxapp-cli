@@ -4,20 +4,33 @@ import Common from '../utils/common.js'
 import Util from '../utils/util.js'
 import * as Http from '../utils/httpModel.js'
 
-// app默认模版
+/*app.js 默认模版配置(app_default.js)
+
+  @key {String}   href_default      app.log()无参数下的默认跳转地址
+  @key {Obj}      share_default     默认分享配置
+       {String}   path              默认分享路径
+       {String}   title             默认分享标题
+       {String}   btnShare_title    通过分享按钮分享的默认分享标题
+  @key {String}   logUrl            测试环境域名,app.log()只在此域名下打印信息   
+*/
 const _init = {
-  href_default: `/pages/Index/index`,
+  href_default: `/pages/index/index`,
   share_default: {
-    path: `/pages/Index/index`,
-    title: `三国咸话`,
-    postsDetail_title: `三国咸话`,
+    path: `/pages/index/index`,
+    title: `我的小程序`,
+    btnShare_title: `我的小程序`,
   },
   logUrl: `https://testforum.hzyoka.com`,
 }
 
-// app模版初始化
+/*初始化app_default.js
+  合并app.js和app_default.js文件
+  
+  @data   {Obj}  app.js 修正配置
+  @_init  {Obj}  app_default.js配置  
+*/
 const init_func = (data, _init) => {
-  _init = Object.assign(_init, data)
+  return _init = Object.assign(data, _init)
 }
 
 // app模版内容
@@ -126,7 +139,6 @@ let app_default = {
 
   // 下拉刷新
   downRefresh(_this, cb) {
-
     !cb && _this.onShow();
 
     let timer = setTimeout(res => {
@@ -194,9 +206,7 @@ let app_default = {
 
   // 混合
   assign(obj) {
-
     return Object.assign({
-
       // 分享
       onShareAppMessage: (res) => {
         let app = getApp();
@@ -210,14 +220,13 @@ let app_default = {
       },
 
       // 下拉刷新
-      onPullDownRefresh: function() {
+      onPullDownRefresh: function () {
         let app = getApp();
 
         app.log(this)
 
         app.downRefresh(this)
       },
-
     }, obj)
   },
 
@@ -239,16 +248,16 @@ let app_default = {
           [_key]: { //被监听的字段
             enumerable: true,
             configurable: true,
-            set: function(value) {
+            set: function (value) {
               let oldVal = this['__' + _key];
               if (value !== oldVal) { //如果新设置的值与原值不等，则触发监听函数
-                setTimeout(function() { //为了同步,否则如果回调函数中有获取该字段值数据时将不同步,获取到的是旧值
+                setTimeout(function () { //为了同步,否则如果回调函数中有获取该字段值数据时将不同步,获取到的是旧值
                   _page.watch[_key].call(_page, oldVal, value); //设置监听函数的上下文对象为当前的Page对象并执行
                 }.bind(this), 0)
               }
               this['__' + _key] = value;
             },
-            get: function() {
+            get: function () {
               return this['__' + _key]
             }
           }
@@ -305,26 +314,3 @@ module.exports = {
   init: init_func,
   app_default
 }
-
-
-/*
-    const app = getApp()
-    Page({
-      data: {
-        appList: [], //应用列表数据    
-        pageIndex: 0, //当前页码索引
-        isLoading: false //是否正在加载中
-      },
-      watch: { //需要监听的字段
-        'pageIndex': function(value) {
-          this.log('监听数据-pageIndex', value, this)
-        },
-        'isLoading': function(value) {
-          this.log('监听数据-isLoading', value, this)
-        }
-      },
-      onLoad() {
-        app.initWatch(this) //初始化需要监听的字段
-      }
-    })
-  */

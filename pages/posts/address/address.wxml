@@ -1,3 +1,0 @@
-<view class='item no_address' data-address='address_none' bindtap='address_choose'>不显示位置</view>
-<view class='item' data-address='{{address}}' bindtap='address_choose'>{{address}}</view>
-<view class='item' bindtap='address_get'>获取地址权限调整</view>

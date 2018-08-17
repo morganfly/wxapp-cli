@@ -2,5 +2,5 @@
   <view class='c1 circle'></view>
   <view class='c2 circle'></view>
   <view class="c3 circle {{i<=num/2?'c31':'c32'}}" animation='{{animationData}}'></view>
-  <view class='text circle'>{{num-i}}S</view>
+  <view class='text circle' bindtap='restart_1'>{{num-i}} S</view>
 </view>

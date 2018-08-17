@@ -70,13 +70,13 @@ App(Object.assign({}, Default.app_default, {
       success: res => {
         let code = res.code;
         wx.setStorageSync('loginCode', code)
-        this.getUserInfo()
+        this.hasToken()
       }
     })
   },
 
   // 如果token存过但过期情况下,重新调用用户信息接口;如果token不存在情况下,则弹出授权弹窗   
-  getUserInfo() {
+  hasToken() {
     let _this = this;
     // 获取用户信息
     wx.getSetting({

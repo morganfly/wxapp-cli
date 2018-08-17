@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "1.9.9",
 	"appid": "wxd67100c9bcf72279",
 	"projectname": "wxapp-cli",
 	"condition": {}

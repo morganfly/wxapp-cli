@@ -1,20 +1,21 @@
-// plugin/component/timer/timer.js
+const app = getApp();
+
 Component({
   properties: {
 
   },
   data: {
-    i:0,
-    num:10
+    i: 0,
+    num: 10
   },
   attached() {
-   this.start(15)
+    this.start(15)
   },
   methods: {
     // 开始倒时间
-    start(x=10){
+    start(x = 10) {
       let num = this.data.num;
-      if(x!=10){
+      if (x != 10) {
         num = x;
         this.setData({
           num
@@ -30,24 +31,28 @@ Component({
         animationData: animation.export(),
         num
       })
-      let interval = setInterval(function () {
+      let interval = setInterval(function() {
         i++;
-        animation.rotate((360/num) * i).step()
+        animation.rotate((360 / num) * i).step()
         this.setData({
           animationData: animation.export(),
           i
         })
       }.bind(this), 1000)
 
-      let timer = setTimeout(function () {
+      let timer = setTimeout(function() {
         clearInterval(interval);
-      }.bind(this), num*1000)
+      }.bind(this), num * 1000)
     },
     // 初始化倒计时
-    init(){
+    init() {
       this.setData({
-        i:0
+        i: 0
       })
+    },
+    restart_1(){
+      this.init();
+      this.start(15);
     }
   }
 })
